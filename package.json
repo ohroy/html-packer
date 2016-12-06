@@ -1,0 +1,19 @@
+{
+  "name": "html-packer",
+  "version": "0.1.0",
+  "description": "pack html to one file",
+  "main": "index.js",
+  "dependencies": {
+    "csso": "2.2.1",
+    "htmlparser2": "3.9.1",
+    "lodash": "4.14.2",
+    "svgo": "0.6.6",
+    "uglify-js": "2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
