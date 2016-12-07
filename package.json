@@ -3,17 +3,25 @@
   "version": "0.1.0",
   "description": "pack html to one file",
   "main": "index.js",
+  "bin": {
+    "html-packer": "./cli.js"
+  },
   "dependencies": {
     "csso": "2.2.1",
     "htmlparser2": "3.9.1",
     "lodash": "4.14.2",
     "svgo": "0.6.6",
-    "uglify-js": "2.7.0"
+    "uglify-js": "2.7.0",
+    "yargs": "^6.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rozbo/html-packer.git"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push--tags && npm publish"
   },
-  "author": "",
+  "author": "rozbo",
   "license": "MIT"
 }

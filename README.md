@@ -1,17 +1,47 @@
 # html-packer
-fork form bellow!
+
+## intro
+This is a branch from [inline-source](https://github.com/popeindustries/inline-source)!
+
+### why
+I want a tool to build a html-suit to one file,so that it can move it easily.  
+At frist, I don't want to write it by myself, but when I were found a round in GITHUB,but
+nothing --  there is no one too I can use. 
+Some of them have many bug ,and some of them have bug just has only one part of the function I want.  
+Then, I find a repo [inline-source](https://github.com/popeindustries/inline-source),it's almost perfect except for css's `url`.
+But the author don't have the plan to add it . He said:
+> I don't do any source transforms apart from minification, 
+> and anything else could be handled before passing content to inline-source.
+> There is a real risk of turning this project into a mini-build system,
+> so I think it's important to hold the line when there are other alternatives.
 
 
-[![NPM Version](https://img.shields.io/npm/v/inline-source.svg?style=flat)](https://npmjs.org/package/inline-source)
-[![Build Status](https://img.shields.io/travis/popeindustries/inline-source.svg?style=flat)](https://travis-ci.org/popeindustries/inline-source)
+I respect and understand his practice. But I have to solve my problem.  
+And I had to change his code to make a `mini-build system` .
 
-# inline-source
+### what
 
-Inline and compress tags that contain the `inline` attribute. Supports `<script>`, `<link>`, and `<img>` (including `*.svg` sources) tags by default, and is easily extensible to handle others.
+html-packer can take html's `<script>`, `<link>`, and `<img>` (including `*.svg` sources) tags into html-self.  
+More than that, it also can compress to minifiy it.
 
-> You can use [inline-source-cli](https://github.com/developit/inline-source-cli) to run `inline-source` from the command line or NPM Scripts.
+## How
+1. Analysis of HTML tags
+2. Extract content from script and minify then replace it to tag's place
+3. Covert the image to a inline base64 source
+4. Extract content from script,and convert image to a inline base64 source then minify and replace it to html.
+5. minify html.
 
-## Usage
+
+## Cli
+```
+html-packer --compress false --root ./ file.html
+```
+or
+
+```
+cat build/index.html | html-packer --root build > build/bundle.html
+```
+## Api
 
 **inline(htmlpath, [options], callback(err, html))**: asynchronously parse `htmlpath` content for tags containing an `inline` attribute, and replace with (optionally compressed) file contents.
 
