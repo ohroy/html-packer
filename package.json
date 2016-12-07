@@ -1,6 +1,6 @@
 {
   "name": "html-packer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "pack html to one file",
   "main": "index.js",
   "bin": {

@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 'use strict';
-var _inlineSource = require('./index');
+var html_packer = require('./index');
 var yargs = require('yargs');
-var _fs = require('fs');
+var fs = require('fs');
 
 let argv = yargs
     .usage(`Usage: $0 [--compress] [--root cwd] in.html [out.html]`)
@@ -34,7 +36,7 @@ else {
 }
 
 function run(source, argv) {
-    inline(source, {
+    html_packer(source, {
         compress: argv.compress,
         rootpath: argv.root || argv.rootpath || process.cwd(),
         attribute: argv.attribute
