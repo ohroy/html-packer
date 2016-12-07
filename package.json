@@ -20,7 +20,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push--tags && npm publish"
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "author": "rozbo",
   "license": "MIT"
