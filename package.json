@@ -1,6 +1,6 @@
 {
   "name": "html-packer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "pack html to one file",
   "main": "index.js",
   "bin": {
@@ -20,7 +20,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": ""
   },
   "author": "rozbo",
   "license": "MIT"
